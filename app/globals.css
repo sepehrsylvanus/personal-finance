@@ -1,21 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Public Sans", serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.preset1,
+.preset2,
+.preset3 {
+  font-weight: bold;
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.preset1,
+.preset2 {
+  line-height: 120%;
+}
+.preset3,
+.preset4,
+.preset5 {
+  line-height: 150%;
+}
+.preset1 {
+  font-size: 32px;
+}
+.preset2 {
+  font-size: 20px;
+}
+.preset3 {
+  font-size: 16px;
+  line-height: 150%;
+}
+.preset4 {
+  font-size: 14px;
+  line-height: 150%;
+}
+.preset5 {
+  font-size: 12px;
+  line-height: 150%;
 }

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        beige: "#F8F4F0",
+        beige500: "#98908B",
         green: "#277C78",
         yellow: "#F2CDAC",
         cyan: "#82C9D7",
@@ -37,5 +40,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;

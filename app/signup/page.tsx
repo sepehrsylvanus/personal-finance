@@ -10,7 +10,7 @@ export default function Signup() {
         <h1 className="preset1">Sign Up</h1>
         <SignUpForm />
       </div>
-      <div className="flex items-center justify-center h-screen py-10">
+      <div className=" items-center justify-center h-screen py-10 hidden md:flex">
         <img
           src={"/auth/loginCanvas.svg"}
           alt="loginCanvas"

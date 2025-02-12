@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="preset1">Login</h1>
         <LoginForm />
       </div>
-      <div className="flex items-center justify-center h-screen py-10">
+      <div className="hidden md:flex items-center justify-center h-screen py-10">
         <img
           src={"/auth/loginCanvas.svg"}
           alt="loginCanvas"

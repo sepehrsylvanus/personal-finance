@@ -41,3 +41,6 @@
   font-size: 12px;
   line-height: 150%;
 }
+.svg-icon path {
+  fill: inherit;
+}

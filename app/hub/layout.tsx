@@ -7,7 +7,7 @@ interface layoutProps {
 
 const layout: FC<layoutProps> = ({ children }) => {
   return (
-    <div className="relative">
+    <div className="relative bg-beige container">
       {children}
       <div className="fixed bottom-0">
         <Navbar />

@@ -3,6 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .flexBetween {
+    @apply flex justify-between items-center;
+  }
+  .flexCol {
+    @apply flex flex-col;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

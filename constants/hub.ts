@@ -61,3 +61,53 @@ export const pots = [
     value: "$10",
   },
 ];
+export const transactions = [
+  {
+    name: "Emma ",
+    lastName: "Richardson",
+    transaction: 75.5,
+    date: "19 Aug 2024",
+  },
+  {
+    name: "Savory ",
+    lastName: "Bites Bistro",
+    transaction: -55.5,
+    date: "19 Aug 2024",
+  },
+  {
+    name: "Daniel ",
+    lastName: "Carter",
+    transaction: -42.3,
+    date: "18 Aug 2024",
+  },
+  {
+    name: "Sun Park",
+    lastName: "Park",
+    transaction: 120.0,
+    date: "17 Aug 2024",
+  },
+  {
+    name: "Urban ",
+    lastName: "Services Hub",
+    transaction: -65.0,
+    date: "17 Aug 2024",
+  },
+];
+export const budgets = [
+  {
+    title: "Entertainment",
+    value: 50.0,
+  },
+  {
+    title: "Bills",
+    value: 750.0,
+  },
+  {
+    title: "Dining Out",
+    value: 75.0,
+  },
+  {
+    title: "Personal Care",
+    value: 100.0,
+  },
+];

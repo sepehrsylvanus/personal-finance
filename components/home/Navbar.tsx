@@ -23,6 +23,7 @@ const Navbar = () => {
     <div className="bg-gray-900  rounded-t-lg w-screen flex justify-center pt-100 px-200">
       {navbarItems.map((item, index) => (
         <div
+          key={index}
           className={`grid place-content-center pt-2 pb-3 w-16 ${
             currentIndex === index &&
             "bg-white rounded-t-lg border-b-4 border-green"

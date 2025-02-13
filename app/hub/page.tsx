@@ -1,10 +1,13 @@
-import { balances, pots } from "@/constants/hub";
+import { balances, budgets, pots, transactions } from "@/constants/hub";
 import Image from "next/image";
 import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import BudgetChart from "@/components/home/BudgetChart";
 
 const Hub = () => {
   return (
-    <div className="py-300 px-200 bg-beige h-screen">
+    <div className="py-300 px-200 bg-beige ">
       <div id="balances" className="flex flex-col gap-150">
         {balances.map((balance, index) => (
           <div
@@ -71,6 +74,95 @@ const Hub = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div
+        id="transactions"
+        className="bg-white py-300 px-250 mt-200 rounded-3xl"
+      >
+        <div id="transactionsHeader" className="flexBetween mb-400">
+          <p className="preset2 ">Transactions</p>
+          <p className="flex gap-3 text-gray-500">
+            View All
+            <Image
+              src={"/icons/Icon=caret-down.svg"}
+              alt="caretDown"
+              width={12}
+              height={12}
+              className="-rotate-90"
+            />
+          </p>
+        </div>
+
+        <div className="flexCol">
+          {transactions.map((transaction, index) => (
+            <div key={index}>
+              <div className="flexBetween">
+                <div className="flex items-center gap-200">
+                  <Avatar>
+                    <AvatarImage
+                      src={`https://picsum.photos/id/${index + 46}/1080/720`}
+                    />
+                    <AvatarFallback>{`${transaction.name[0]} ${transaction.lastName[0]}`}</AvatarFallback>
+                  </Avatar>
+                  <p className="preset4 font-bold">{`${transaction.name} ${transaction.lastName}`}</p>
+                </div>
+                <div className="flexCol gap-100 text-end">
+                  <p
+                    className={`preset4 font-bold ${
+                      transaction.transaction > 0 && "text-green"
+                    }`}
+                  >
+                    {transaction.transaction > 0 ? "+" : ""}
+                    {transaction.transaction}
+                  </p>
+                  <p className="preset5 text-gray-500">{transaction.date}</p>
+                </div>
+              </div>
+              {index !== transactions.length - 1 && (
+                <Separator className="my-250" />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div id="budgets" className="bg-white rounded-xl mt-300 py-300 px-250">
+        <div id="budgetHeader" className="flexBetween mb-250">
+          <p className="preset2 ">Budgets</p>
+          <p className="flex gap-3 text-gray-500">
+            View All
+            <Image
+              src={"/icons/Icon=caret-down.svg"}
+              alt="caretDown"
+              width={12}
+              height={12}
+              className="-rotate-90"
+            />
+          </p>
+        </div>
+
+        <BudgetChart />
+
+        <div className="grid grid-cols-2 grid-rows-2 gap-200 mt-250">
+          {budgets.map((budget, index) => (
+            <div
+              key={index}
+              className={`flexCol gap-1 border-l-4 ${
+                index === 0
+                  ? "border-l-[#626070]"
+                  : index === 1
+                  ? "border-l-[#F2CDAC]"
+                  : index === 2
+                  ? "border-l-[#82C9D7]"
+                  : "border-l-[#277C78]"
+              } pl-200`}
+            >
+              <p className="text-gray-500">{budget.title}</p>
+              <p>${budget.value}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
